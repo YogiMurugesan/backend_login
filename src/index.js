@@ -4,7 +4,6 @@ const app = express();
 const hbs = require("hbs");
 const collection = require("./mongodb");
 const tempelatepath = path.join(__dirname, "../temelates");
-
 app.use(express.json());
 app.set("view engine", "hbs");
 app.set("views", tempelatepath);
