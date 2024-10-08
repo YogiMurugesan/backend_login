@@ -1,3 +1,16 @@
+const mongoose=require("mongoose")
+
+mongoose.connect("mongodb+srv://admin:admin123@cluster0.0vvzk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+
+.then(()=>{
+    console.log('mongoose connected');
+})
+.catch((e)=>{
+    console.log(e);
+    console.log('failed to connect');
+})
+
+
 const RegisterSchema = new mongoose.Schema({
     name: {
       type: String,
@@ -15,7 +28,7 @@ const RegisterSchema = new mongoose.Schema({
       type: String,
       required: true
     },
-    Ac: {
+    ac: {
       type: String,
       required: true
     },
@@ -31,6 +44,10 @@ const RegisterSchema = new mongoose.Schema({
   
   // Define models
   
-  const register=new mongoose.model("register",LogInSchema)
+  const detail=new mongoose.model("detail",RegisterSchema )
   
-  module.exports=register
+  module.exports=detail
+
+
+
+

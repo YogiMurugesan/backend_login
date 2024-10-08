@@ -7,6 +7,7 @@ const tempelatepath = path.join(__dirname, "../temelates");
 app.use(express.json());
 app.set("view engine", "hbs");
 app.set("views", tempelatepath);
+app.use("/images",express.static('images'));
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
@@ -24,6 +25,28 @@ app.post("/signup", async (req, res) => {
   await collection.insertMany([data]);
   res.render("home");
 });
+
+
+
+
+app.get("/register1", (req, res) => {
+  res.render("register1");
+});
+app.post("/register1", async (req, res) => {
+  const data = {
+    name: req.body.name,
+    department: req.body.department,
+    email: req.body.email,
+    password: req.body.password,
+    ac: req.body.ac,
+    phoneno: req.body.phoneno,
+    gender: req.body.gender,
+  };
+
+  await collection.insertMany([data]);
+  res.render("sucs");
+});
+
 app.post("/login", async (req, res) => {
     console.log("ghjk")
   try {
