@@ -49,7 +49,7 @@ app.post("/register1", async (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
-    console.log("ghjk")
+    console.log("super yogi")
   try {
     const check = await collection.findOne({ name: req.body.name });
     if (check.password === req.body.password) {
