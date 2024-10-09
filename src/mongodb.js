@@ -21,44 +21,12 @@ const LogInSchema=new mongoose.Schema({
     }
 })
 
-const RegisterSchema = new mongoose.Schema({
-    name: {
-      type: String,
-      required: true
-    },
-    department: {
-      type: String,
-      required: true
-    },
-    email: {
-      type: String,
-      required: true
-    },
-    password: {
-      type: String,
-      required: true
-    },
-    ac: {
-      type: String,
-      required: true
-    },
-    phoneno: {
-      type: String,
-      required: true
-    },
-    gender: {
-      type: String,
-      required: true
-    }
-  });
 
 const collection=new mongoose.model("collection",LogInSchema)
 
 module.exports=collection
 
-const detail=new mongoose.model("details",RegisterSchema )
-  
-module.exports=detail
+
 
 
 

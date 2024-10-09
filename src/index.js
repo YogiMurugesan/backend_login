@@ -3,6 +3,7 @@ const path = require("path");
 const app = express();
 const hbs = require("hbs");
 const collection = require("./mongodb");
+const detail=require("./mongo");
 const tempelatepath = path.join(__dirname, "../temelates");
 app.use(express.json());
 app.set("view engine", "hbs");
@@ -43,7 +44,7 @@ app.post("/register1", async (req, res) => {
     gender: req.body.gender,
   };
 
-  await collection.insertMany([data]);
+  await detail.insertMany([data]);
   res.render("sucs");
 });
 
